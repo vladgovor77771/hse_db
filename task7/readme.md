@@ -5,6 +5,7 @@
 Install node.js, then
 
 ```bash
+npm install -g yarn
 git clone https://github.com/vladgovor77771/hse_db
 cd hse_db/task7
 npx yarn install
