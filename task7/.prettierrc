@@ -1,0 +1,8 @@
+{
+  "parser": "babel-ts",
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "avoid",
+  "printWidth": 90,
+  "semicolons": true
+}
