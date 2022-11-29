@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: db-task-0
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: task0
+      POSTGRES_USER: task0
+      POSTGRES_PASSWORD: task0
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./sql/0_table.sql:/docker-entrypoint-initdb.d/0_table.sql
+      - ../1_data.sql:/docker-entrypoint-initdb.d/1_data.sql
+      - ./sql/2_migration.sql:/docker-entrypoint-initdb.d/2_migration.sql
+    ports:
+      - "5444:5432"
