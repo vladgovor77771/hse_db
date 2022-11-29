@@ -7,3 +7,5 @@ EXPLAIN SELECT * FROM t_books WHERE book_id = 18;
 -- ------------------------------------------------------------------------------
 --  Index Scan using t_books_id_pk on t_books  (cost=0.42..8.44 rows=1 width=62)
 --    Index Cond: (book_id = 18)
+
+-- Здесь наблюдаем Index Scan. Скорее всего это бинарный поиск с разными оптимизациями.

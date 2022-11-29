@@ -8,4 +8,5 @@ EXPLAIN SELECT * FROM t_books WHERE title = 'Oracle Core';
 -- -----------------------------------------------------------
 --  Seq Scan on t_books  (cost=0.00..4075.97 rows=3 width=63)
 --    Filter: ((title)::text = 'Oracle Core'::text)
--- (2 rows)
+
+-- Последовательное сравнение (seq scan).

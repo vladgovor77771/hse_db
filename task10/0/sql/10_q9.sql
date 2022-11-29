@@ -2,15 +2,13 @@
 -- values on column title, distinct values in column 
 -- category, distinct values in column author.
 
-SELECT DISTINCT ON (title, category, author) book_id, title, category, author FROM t_books LIMIT 1;
+SELECT 
+    count(*) AS total, 
+    count(DISTINCT title) AS distinct_titles, 
+    count(DISTINCT category) AS distinct_categories, 
+    count(DISTINCT author) AS distinct_authors
+FROM t_books;
 
--- ...
-
-EXPLAIN SELECT DISTINCT ON (title, category, author) book_id, title, category, author FROM t_books;
-
---                                  QUERY PLAN                                 
--- ----------------------------------------------------------------------------
---  Unique  (cost=24503.50..26179.48 rows=47010 width=60)
---    ->  Sort  (cost=24503.50..24922.49 rows=167598 width=60)
---          Sort Key: title, category, author
---          ->  Seq Scan on t_books  (cost=0.00..3656.98 rows=167598 width=60)
+--  total  | distinct_titles | distinct_categories | distinct_authors 
+-- --------+-----------------+---------------------+------------------
+--  167598 |           51196 |                  25 |            28063
